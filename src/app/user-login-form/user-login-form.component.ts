@@ -31,12 +31,10 @@ export class UserLoginFormComponent implements OnInit {
       // Logic for a successful login --> to be implemented!
       // Close modal on success
       this.dialogRef.close();
-      console.log(result);
       this.snackBar.open(`Welcome ${result.user.username}!`, 'OK', {
         duration: 3000
       });
     }, (result) => {
-      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 3000
       });
