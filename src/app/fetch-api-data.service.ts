@@ -13,14 +13,14 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) { }
   // Make the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    // console.log(userDetails);
     return this.http
       .post(API_URL + 'users', userDetails)
       .pipe(catchError(this.handleError));
   }
 
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    //  console.log(userDetails);
     return this.http
       .post(API_URL + 'login', userDetails)
       .pipe(catchError(this.handleError));

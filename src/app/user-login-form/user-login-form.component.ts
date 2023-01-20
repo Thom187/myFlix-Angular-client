@@ -5,6 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 // To display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login-form',
@@ -16,6 +17,7 @@ export class UserLoginFormComponent implements OnInit {
   @Input() userData = { username: '', password: '' };
 
   constructor(
+    private router: Router,
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar
@@ -28,7 +30,9 @@ export class UserLoginFormComponent implements OnInit {
   // Send form inputs to the backend
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-      // Logic for a successful login --> to be implemented!
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('user', result.user.username)
+      this.router.navigate(['movies']);
       // Close modal on success
       this.dialogRef.close();
       this.snackBar.open(`Welcome ${result.user.username}!`, 'OK', {
