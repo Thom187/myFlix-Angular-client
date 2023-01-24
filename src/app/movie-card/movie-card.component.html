@@ -11,7 +11,7 @@
         <button>Synopsis</button>
         <button (click)="openDirectorDialog(movie.director.name,
           movie.director.bio,movie.director.birthday)">Director</button>
-        <button>Genre</button>
+        <button (click)="openGenreDialog(movie.genre.name, movie.genre.description)">Genre</button>
         <mat-icon>favorite_border</mat-icon>
       </mat-card-actions>
 
