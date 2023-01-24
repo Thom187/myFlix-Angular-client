@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -26,6 +27,15 @@ export class MovieCardComponent {
       this.movies = resp;
       //  console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  openSynopsisDialog(title: string, description: string): void {
+    this.dialog.open(SynopsisComponent, {
+      data: {
+        title: title,
+        description: description,
+      }
     });
   }
 

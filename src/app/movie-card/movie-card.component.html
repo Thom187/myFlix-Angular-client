@@ -8,7 +8,7 @@
     </mat-dialog-content>
     <mat-card-footer>
       <mat-card-actions class="footer">
-        <button>Synopsis</button>
+        <button (click)="openSynopsisDialog(movie.title, movie.description)">Synopsis</button>
         <button (click)="openDirectorDialog(movie.director.name,
           movie.director.bio,movie.director.birthday)">Director</button>
         <button (click)="openGenreDialog(movie.genre.name, movie.genre.description)">Genre</button>
