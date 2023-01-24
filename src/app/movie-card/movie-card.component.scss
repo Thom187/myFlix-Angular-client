@@ -1,0 +1,44 @@
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 0px 40px;
+  width: max-content;
+}
+
+.list-item {
+  background-color: rgba(0, 0, 0, .65);
+  margin: 25px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 2%;
+  width: 275px;
+}
+
+.header {
+  justify-content: center;
+}
+
+.title {
+  padding: 10px;
+}
+
+.image {
+  width: 100%;
+}
+
+.footer {
+  justify-content: space-between;
+
+  button {
+    background-color: inherit;
+    color: inherit;
+    font-weight: 600;
+    border: none;
+  }
+
+  :hover {
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
