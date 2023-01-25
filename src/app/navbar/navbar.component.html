@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <span>
+    <a mat-button class="profile-button" (click)="toProfile()" aria-label="Navigation to your Profile">
+      <mat-icon>account_box</mat-icon>{{user.username}}
+    </a>
+  </span>
+  <button mat-button (click)="toMovies()" class="logo">myFlix</button>
+  <span class="nav-logout">
+    <a mat-button (click)="logOut()" class="logout-button">
+      <mat-icon>logout</mat-icon>Logout
+    </a>
+  </span>
+</mat-toolbar>

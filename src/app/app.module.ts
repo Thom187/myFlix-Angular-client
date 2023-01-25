@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -25,10 +26,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -42,6 +46,8 @@ const appRoutes: Routes = [
     DirectorComponent,
     GenreComponent,
     SynopsisComponent,
+    ProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -56,6 +62,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatIconModule,
     MatSnackBarModule,
+    MatToolbarModule,
     FormsModule
   ],
   providers: [],
