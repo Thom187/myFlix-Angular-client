@@ -1,1 +1,67 @@
 <app-navbar></app-navbar>
+<div class="profile-view">
+  <mat-card class="profile-form">
+    <mat-card-header class="header">
+      <mat-card-title>Profile Update</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+
+        <div class="input">
+          <mat-form-field>
+            <input matInput [(ngModel)]="updatedUser.username" value="{{ updatedUser.username }}" type="text"
+              name="Username" required minlength="6" #username="ngModel" />
+          </mat-form-field>
+
+          <div class="error-message" *ngIf="username.invalid">
+            <div *ngIf="username.errors?.['required']">
+              Your Username is required.
+            </div>
+            <div *ngIf="username.errors?.['minlength']">
+              Your new Username must be at least 6 characters long.
+            </div>
+          </div>
+        </div>
+        <div class="input">
+          <mat-form-field>
+            <input matInput [(ngModel)]="updatedUser.password" placeholder="Password" type="password" name="Password"
+              required minlength="6" #password="ngModel" />
+          </mat-form-field>
+
+          <div class="error-message" *ngIf="password.invalid">
+            <div *ngIf="password.errors?.['required']">
+              Your Password is required.
+            </div>
+            <div *ngIf="password.errors?.['minlength']">
+              Your Password must be at least 6 characters long.
+            </div>
+          </div>
+        </div>
+
+        <div class="input">
+          <mat-form-field>
+            <input matInput [(ngModel)]="updatedUser.email" value="{{updatedUser.email}}" type="email" name="Email"
+              required #email="ngModel" />
+          </mat-form-field>
+
+          <div class="error-message" *ngIf="email.invalid">
+            <div *ngIf="email.errors?.['required']">
+              Your Email address is required.
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="button" mat-raised-button (click)="updateUserInfo()" color="primary">
+        <mat-icon>edit</mat-icon>
+        Update Profile
+      </button>
+      <button class="button" mat-raised-button (click)="deleteProfile()" color="warn">
+        <mat-icon>delete_forever</mat-icon>
+        Delete account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
