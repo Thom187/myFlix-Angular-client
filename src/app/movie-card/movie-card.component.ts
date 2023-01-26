@@ -13,6 +13,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 })
 export class MovieCardComponent {
   movies: any[] = [];
+  favorites: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog
@@ -20,6 +21,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -57,4 +59,37 @@ export class MovieCardComponent {
       }
     });
   }
+
+  getFavoriteMovies(): void {
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.favorites = resp.favoriteMovies;
+      console.log(this.favorites);
+    });
+  }
+
+  addFavorite(movieId: string): void {
+    this.fetchApiData.addFavoriteMovie(movieId).subscribe((resp: any) => {
+      this.getFavoriteMovies();
+    });
+  }
+
+  removeFavorite(movieId: string): void {
+    this.fetchApiData.removeFavoriteMovie(movieId).subscribe((resp: any) => {
+      this.getFavoriteMovies();
+    });
+  }
+
+  // Check if a movie is a favourite
+  isFavoriteMovie(movieId: string): boolean {
+    return this.favorites.includes(movieId);
+  }
+
+  toggleFavorite(movieId: string): void {
+    if (this.isFavoriteMovie(movieId)) {
+      this.removeFavorite(movieId);
+    } else {
+      this.addFavorite(movieId);
+    }
+  }
+
 }
