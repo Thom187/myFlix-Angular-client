@@ -41,12 +41,15 @@
         <div class="input">
           <mat-form-field>
             <input matInput [(ngModel)]="updatedUser.email" value="{{updatedUser.email}}" type="email" name="Email"
-              required #email="ngModel" />
+              required #email="ngModel" email="true" />
           </mat-form-field>
 
           <div class="error-message" *ngIf="email.invalid">
             <div *ngIf="email.errors?.['required']">
               Your Email address is required.
+            </div>
+            <div *ngIf="email.errors?.['email']">
+              Please enter a valid email.
             </div>
           </div>
         </div>
