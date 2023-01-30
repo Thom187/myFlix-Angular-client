@@ -21,8 +21,7 @@
               Your new Username must be at least 6 characters long.
             </div>
           </div>
-        </div>
-        <div class="input">
+
           <mat-form-field>
             <input matInput [(ngModel)]="updatedUser.password" placeholder="Password" type="password" name="Password"
               required minlength="6" #password="ngModel" />
@@ -36,9 +35,7 @@
               Your Password must be at least 6 characters long.
             </div>
           </div>
-        </div>
 
-        <div class="input">
           <mat-form-field>
             <input matInput [(ngModel)]="updatedUser.email" value="{{updatedUser.email}}" type="email" name="Email"
               required #email="ngModel" email="true" />
@@ -53,18 +50,18 @@
             </div>
           </div>
         </div>
-
       </form>
+
+      <mat-card-actions class="buttons">
+        <button mat-raised-button (click)="updateUserInfo()" color="primary">
+          <mat-icon>edit</mat-icon>
+          Update Profile
+        </button>
+        <button mat-raised-button (click)="deleteProfile()" color="warn">
+          <mat-icon>delete_forever</mat-icon>
+          Delete account
+        </button>
+      </mat-card-actions>
     </mat-card-content>
-    <mat-card-actions>
-      <button class="button" mat-raised-button (click)="updateUserInfo()" color="primary">
-        <mat-icon>edit</mat-icon>
-        Update Profile
-      </button>
-      <button class="button" mat-raised-button (click)="deleteProfile()" color="warn">
-        <mat-icon>delete_forever</mat-icon>
-        Delete account
-      </button>
-    </mat-card-actions>
   </mat-card>
 </div>

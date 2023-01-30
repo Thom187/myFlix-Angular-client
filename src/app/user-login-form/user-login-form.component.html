@@ -9,20 +9,18 @@
           <mat-form-field>
             <input matInput [(ngModel)]="userData.username" placeholder="Username" type="text" name="Username" required>
           </mat-form-field>
-        </div>
 
-        <div class="input">
           <mat-form-field>
             <input matInput [(ngModel)]="userData.password" placeholder="Password" type="password" name="Password"
               required>
           </mat-form-field>
         </div>
       </form>
+      <mat-card-actions>
+        <button class="button" mat-raised-button (click)="loginUser()" color="primary">
+          Login
+        </button>
+      </mat-card-actions>
     </mat-card-content>
-    <mat-card-actions>
-      <button class="button" mat-raised-button (click)="loginUser()" color="primary">
-        Login
-      </button>
-    </mat-card-actions>
   </mat-card>
 </div>
