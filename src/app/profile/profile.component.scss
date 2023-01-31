@@ -4,45 +4,45 @@
   justify-content: space-evenly;
   height: 100%;
   background-color: #333;
+}
 
-  .profile-form {
-    align-items: center;
-    background-color: #333;
-  }
+.profile-form {
+  align-items: center;
+  background-color: #333;
+}
 
 
-  .header {
-    color: white;
-    font-size: 22px;
-    margin: 20px;
-  }
+.header {
+  color: white;
+  font-size: 22px;
+  margin: 20px;
+}
 
-  .input {
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.input {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .error-message {
-    color: #e50914;
-    font-style: italic;
-    margin-top: -18px;
-    margin-bottom: 8px;
-    font-size: smaller;
-  }
+.error-message {
+  color: #e50914;
+  font-style: italic;
+  margin-top: -18px;
+  margin-bottom: 8px;
+  font-size: smaller;
+}
 
-  .buttons {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 16px;
-    margin: 10px;
-    text-align: center;
-  }
+.buttons {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  margin: 10px;
+  text-align: center;
+}
 
-  button {
-    max-width: 100%;
-    margin: 5px
-  }
+button {
+  max-width: 100%;
+  margin: 5px
 }
