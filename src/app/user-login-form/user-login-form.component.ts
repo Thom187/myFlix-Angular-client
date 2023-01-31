@@ -27,7 +27,10 @@ export class UserLoginFormComponent implements OnInit {
 
   }
 
-  // Send form inputs to the backend
+  /**  
+   * Send form inputs to the backend
+   * @function loginUser
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       localStorage.setItem('token', result.token);

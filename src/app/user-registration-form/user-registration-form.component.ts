@@ -25,7 +25,10 @@ export class UserRegistrationFormComponent implements OnInit {
 
   }
 
-  // Send form inputs to the backend
+  /**  
+   * Send form inputs to the backend
+   * @function registerUser
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       // Logic for a successful registration --> to be implemented!

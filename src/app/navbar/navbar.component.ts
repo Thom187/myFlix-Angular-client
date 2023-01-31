@@ -25,14 +25,27 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  /**
+   * Navigation to movies page
+   * @function toMovies
+   */
   toMovies(): void {
     this.router.navigate(['movies']);
   }
+
+  /**
+   * Navigation to User profile 
+   * @function toProfile
+   */
 
   toProfile(): void {
     this.router.navigate(['profile']);
   }
 
+  /**
+   * Logging out current User, clearing localStorage and navigation to Welcome page
+   * @function logOut
+   */
   logOut(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);
